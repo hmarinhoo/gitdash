@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dracula">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <title>EpicTask</title>
+</head>
+<body>
+    <h1 class="text-3xl text-primary font-bold p-8">GITDASH</h1>
+    <div class="card bg-neutral text-neutral-content p-8">
+        <div class="card-body items-center text-center">
+            <h2 class="card-title">Sair!</h2>
+            <p>Tem certeza que deseja sair?</p>
+            <div class="card-actions justify-end">
+                <a href="javascript:history.back()" class="btn btn-neutral">Não, continuar no Githdash</a>
+                <form method="post" th:action="${'/logout'}">
+                    <button class="btn btn-primary">Sim, Sair do Githdash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

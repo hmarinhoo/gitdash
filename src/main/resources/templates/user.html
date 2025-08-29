@@ -26,20 +26,13 @@
 
         <h2>Repositórios</h2>
         <!-- aqui você deve percorrer a lista de repositório para mostrar os dados -->
-        <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-start">
+         <ul class="list-group">
+            <li th:each="repo : ${repos}" class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
-                    <div class="fw-bold">Repositório 1</div>
-                    <span>Descrição do Repositório 1</span>
+                    <div class="fw-bold" th:text="${repo.name}">Repositório</div>
+                    <span th:text="${repo.description}">Descrição do repositório</span>
                 </div>
-                <span class="badge text-bg-primary rounded-pill">10 commits</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold">Repositório 2</div>
-                    <span>Descrição do Repositório 2</span>
-                </div>
-                <span class="badge text-bg-primary rounded-pill">2 commits</span>
+                <span class="badge text-bg-primary rounded-pill" th:text="${repo.commitCount} + ' commits'">0 commits</span>
             </li>
         </ul>
 
